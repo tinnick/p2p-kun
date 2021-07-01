@@ -1,0 +1,22 @@
+<main class="login-page">
+
+    <div class="color-sphere">
+        <div class="pallete"></div>
+        <div class="pallete"></div>
+        <div class="pallete"></div>
+        <div class="pallete"></div>
+    </div>
+
+    <form class="login-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <input [type]="formFields.username.type"
+               [formControlName]="formFields.username.name"
+               [placeholder]="formFields.username.name"
+               required>
+        <input [type]="formFields.password.type"
+               [formControlName]="formFields.password.name"
+               [placeholder]="formFields.password.name"
+               required>
+        <input [class.hidden]="formGroup?.invalid" type="submit" value="login">
+        <input [class.hidden]="formGroup?.invalid || (userExists$ | async)" type="submit" value="register">
+    </form>
+</main>

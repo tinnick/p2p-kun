@@ -1,0 +1,94 @@
+@use 'sass:list';
+
+.login-page {
+    width: 100vw;
+    height: 100vh;
+    background-color: #EEEEEE;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 3rem;
+
+
+    .color-sphere {
+        position: relative;
+       width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 50px -10px #03A9F450;
+        
+        animation: rotate 10s infinite linear;
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pallete {
+            position: absolute;
+            inset: 0 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+        $sphere-colors: (#FFEB3B #FF9800 #03A9F4 #3F51B5);
+        
+        @for $index from 1 to 5 {
+            .pallete:nth-child(#{$index}) {
+                $pallete: list.nth($sphere-colors, $index);
+
+                background: linear-gradient(45deg, $pallete, rgba($pallete, 0) 75% 25%);
+                animation: fade-in-out 3s infinite alternate $index + s;
+                transform: rotate(#{90deg * $index});
+            }
+        }
+
+        @keyframes fade-in-out {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+    }
+
+    .login-form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 30px;
+
+        input:not([type="submit"]) {
+            width: 480px;
+            max-width: 85vw;
+            height: 3rem;
+            background-color: whitesmoke;
+            outline: none;
+            border: none;
+            padding: 0 1rem;
+            border-radius: 1rem;
+        }
+
+        input[type="submit"] {
+            transition: all 0.3s linear;
+            opacity: 1;
+            width: 100px;
+
+            &.hidden {
+                opacity: 0;
+                width: 0;
+            }
+        }
+    }
+}
