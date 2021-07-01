@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as Gun from 'gun';
-import { GunService } from 'src/app/core';
+import { GunService } from '@core/services';
 
 @Component({
   selector: 'shul-top-page',
