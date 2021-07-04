@@ -14,7 +14,7 @@ import { AuthService } from '@core/services';
 })
 export class LoginPageComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup = null!
-  public userExists$: Observable<boolean> | null = null;
+  // public userExists$: Observable<boolean> | null = null;
 
   public readonly formFields = {
     username: {

@@ -9,10 +9,8 @@ import { GunService } from '@core/services';
 })
 export class TopPageComponent implements OnInit {
 
-  constructor(private readonly gunService: GunService) { }
+  constructor(/* private readonly gunService: GunService */) { }
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
 }
