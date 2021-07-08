@@ -8,7 +8,7 @@ const routes: Routes = [{
   loadChildren: () => import('@pages/login/login.module').then(mod => mod.LoginModule)
 },{
   path: '',
-  canLoad: [AuthGuard],
+  // canLoad: [AuthGuard],
   loadChildren: () => import('@pages/top/top.module').then(mod => mod.TopModule)
 },{
   path: '**',
