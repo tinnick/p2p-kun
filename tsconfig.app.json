@@ -9,7 +9,7 @@
       "@models/*": ["app/models/*"],
       "@core/*": ["app/core/*"],
       "@pages/*": ["app/pages/*"],
-      "@shared/*": ["app/shared/*"],
+      "@shared/*": ["app/shared/*"]
     }
   },
   "files": [
