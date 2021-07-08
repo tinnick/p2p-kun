@@ -4,10 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '@core/guards';
 
 const routes: Routes = [{
-  path: 'login',
+  path: '',
   loadChildren: () => import('@pages/login/login.module').then(mod => mod.LoginModule)
 },{
-  path: '',
+  path: 'login',
   // canLoad: [AuthGuard],
   loadChildren: () => import('@pages/top/top.module').then(mod => mod.TopModule)
 },{
