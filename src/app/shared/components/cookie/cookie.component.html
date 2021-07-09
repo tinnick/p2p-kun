@@ -1,0 +1,10 @@
+<p class="{{ config?.name }}">cookie type is {{ type }}</p>
+
+<div>{{ config | json }}</div>
+
+<ng-container *ngFor="let country of config?.favorites">
+
+    <h1 *ngIf="country === 'japan'"> We are {{ screenWidth }}! </h1>
+    <p *ngIf="!(country === 'japan')"> I came from {{ country }} </p>
+</ng-container>
+

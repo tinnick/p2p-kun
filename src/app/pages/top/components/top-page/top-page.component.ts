@@ -8,6 +8,12 @@ import { GunService } from '@core/services';
   styleUrls: ['./top-page.component.scss']
 })
 export class TopPageComponent implements OnInit {
+  cookieConfig = {
+    name: 'denish',
+    favorites: ['germany', 'america', 'japan']
+  }
+  
+  public array = ['germany', 'america', 'japan'];
 
   constructor(/* private readonly gunService: GunService */) { }
 
